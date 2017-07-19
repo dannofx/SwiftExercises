@@ -22,7 +22,6 @@ class ViewController: UIViewController {
     @IBAction func showCodeViewController(sender: Any) {
         let controller = self.storyboard!.instantiateViewController(withIdentifier: String(describing: CodeViewController.self))
         controller.modalPresentationStyle = .overCurrentContext
-        controller.modalTransitionStyle = .crossDissolve
         self.present(controller, animated: true)
     }
 
