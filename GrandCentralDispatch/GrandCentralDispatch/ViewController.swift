@@ -28,7 +28,7 @@ class ViewController: UIViewController {
         // The examples are ordered by difficulty level.
         
         // Custom queue example
-        //self.performCustomQueueTask()
+        self.performCustomQueueTask()
         
         // Global queue example
         //self.performGlobalQueueTask()
@@ -49,7 +49,7 @@ class ViewController: UIViewController {
         //self.performSerialTasks()
         
         // Dispatch once example
-        self.performDispatchOnceExample()
+        //self.performDispatchOnceExample()
         
         // Initially inactive queue example
         //self.useOfInactiveQueue()
