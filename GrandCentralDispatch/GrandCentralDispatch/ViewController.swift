@@ -8,6 +8,17 @@
 
 import UIKit
 
+// This property will be used in the example "Dispatch example"
+var firstAccessMessage: String = { _ in
+    print("This code will be executed just once.")
+    let date = Date()
+    let dateFormatter = DateFormatter()
+    dateFormatter.dateFormat = "y-MM-dd H:m:ss.SSSS"
+    let stringDate = dateFormatter.string(from: date)
+    let message = "The firt and las calculation of this was on \(stringDate)"
+    return message
+    }()
+
 class ViewController: UIViewController {
 
     override func viewDidLoad() {
@@ -38,7 +49,7 @@ class ViewController: UIViewController {
         //self.performSerialTasks()
         
         // Dispatch once example
-        //self.performDispatchOnceExample()
+        self.performDispatchOnceExample()
         
         // Initially inactive queue example
         //self.useOfInactiveQueue()
@@ -193,28 +204,18 @@ class ViewController: UIViewController {
     //
     // There is no longer `dispatch_once` method to
     // perform a code one and just one time. Instead the use
-    // of lazy initialization is encouraged, since Swift ensures
-    // that the initialization will be thread safe.
+    // of lazy initialization of global variables is encouraged
+    // since Swift ensures that the initialization will
+    // be thread safe. Static properties have the same behavior.
     //
     // The example shows a variable which calculation to generate
-    // its value will be performed just once.
-    
-    // WARNING: THIS SAMPLE DOESN'T WORK!!!!
-    
-    lazy var firstAccessMessage: String = { [unowned self] in
-        print("This code will be executed just once.")
-        let date = Date()
-        let dateFormatter = DateFormatter()
-        dateFormatter.dateFormat = "y-MM-dd H:m:ss.SSSS"
-        let stringDate = dateFormatter.string(from: date)
-        let message = "The firt and las calculation of this was on \(stringDate)"
-        return message
-        }()
+    // its value will be performed just once. This variable is at
+    // the beginning of the file, outside of the class.
     
     func performDispatchOnceExample() {
         for i in 0..<100 {
             DispatchQueue.global(qos: .userInitiated).async {
-                let message = self.firstAccessMessage
+                let message = firstAccessMessage
                 print("Access number \(i) of message\"\(message)\"")
             }
         }
