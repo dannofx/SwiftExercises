@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12121" systemVersion="16E195" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="zqF-ku-g9h">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Navigation Controller-->
+        <scene sceneID="vnZ-wx-P54">
+            <objects>
+                <navigationController hidesBarsOnSwipe="YES" id="zqF-ku-g9h" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="pZD-Ta-2bT">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" red="0.0" green="0.1412072147" blue="0.82246093750000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="tintColor" red="0.0" green="0.1412072147" blue="0.82246093750000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="barTintColor" red="0.36620839931154381" green="0.62039443092568136" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <textAttributes key="titleTextAttributes">
+                            <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        </textAttributes>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="iRr-mn-rzE" kind="relationship" relationship="rootViewController" id="MkP-S5-tqM"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="sPM-Bv-q2p" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-293" y="50"/>
+        </scene>
+        <!--Company finder-->
+        <scene sceneID="S7I-Bv-hTV">
+            <objects>
+                <tableViewController title="Company finder" id="iRr-mn-rzE" customClass="SearchTableViewController" customModule="AsyncAutoSuggestExample" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="100" sectionHeaderHeight="28" sectionFooterHeight="28" id="9CH-lS-Tac">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" red="0.65228633955574711" green="0.71923625405518832" blue="0.83753906249999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <searchBar key="tableHeaderView" contentMode="redraw" searchBarStyle="prominent" placeholder="Write a company name..." id="Doj-gT-8A9">
+                            <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                            <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                            <color key="barTintColor" red="0.36620839929999999" green="0.62039443090000002" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <textInputTraits key="textInputTraits"/>
+                            <connections>
+                                <outlet property="delegate" destination="iRr-mn-rzE" id="XCA-nz-fzB"/>
+                            </connections>
+                        </searchBar>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="result" rowHeight="100" id="aLJ-zT-Y5h">
+                                <rect key="frame" x="0.0" y="72" width="375" height="100"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="aLJ-zT-Y5h" id="Eav-Rd-kSn">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="100"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9Ry-a1-jb5">
+                                            <rect key="frame" x="8" y="4" width="359" height="92"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" tag="50" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FuT-Ki-FyW">
+                                                    <rect key="frame" x="15" y="15" width="329" height="62"/>
+                                                    <fontDescription key="fontDescription" name=".SFNSDisplay" family=".SF NS Display" pointSize="34"/>
+                                                    <color key="textColor" white="0.37930484693877553" alpha="1" colorSpace="calibratedWhite"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                            <constraints>
+                                                <constraint firstItem="FuT-Ki-FyW" firstAttribute="top" secondItem="9Ry-a1-jb5" secondAttribute="top" constant="15" id="2kX-gw-OgS"/>
+                                                <constraint firstAttribute="trailing" secondItem="FuT-Ki-FyW" secondAttribute="trailing" constant="15" id="AAq-tq-XpG"/>
+                                                <constraint firstAttribute="bottom" secondItem="FuT-Ki-FyW" secondAttribute="bottom" constant="15" id="Qs1-0Q-Wkc"/>
+                                                <constraint firstItem="FuT-Ki-FyW" firstAttribute="leading" secondItem="9Ry-a1-jb5" secondAttribute="leading" constant="15" id="wye-oF-sLG"/>
+                                            </constraints>
+                                            <userDefinedRuntimeAttributes>
+                                                <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                    <integer key="value" value="7"/>
+                                                </userDefinedRuntimeAttribute>
+                                            </userDefinedRuntimeAttributes>
+                                        </view>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstAttribute="trailing" secondItem="9Ry-a1-jb5" secondAttribute="trailing" constant="8" id="OGN-hn-x5K"/>
+                                        <constraint firstAttribute="bottom" secondItem="9Ry-a1-jb5" secondAttribute="bottom" constant="4" id="Qbk-BY-Ub5"/>
+                                        <constraint firstItem="9Ry-a1-jb5" firstAttribute="top" secondItem="Eav-Rd-kSn" secondAttribute="top" constant="4" id="q2O-OK-EXg"/>
+                                        <constraint firstItem="9Ry-a1-jb5" firstAttribute="leading" secondItem="Eav-Rd-kSn" secondAttribute="leading" constant="8" id="xyj-yd-Qqe"/>
+                                    </constraints>
+                                </tableViewCellContentView>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="iRr-mn-rzE" id="yGe-yV-6lx"/>
+                            <outlet property="delegate" destination="iRr-mn-rzE" id="ZH0-Dm-xyA"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="Company finder" id="pn6-xy-h9t"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="mVi-8l-Wf4" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="520.79999999999995" y="49.925037481259373"/>
+        </scene>
+    </scenes>
+</document>
