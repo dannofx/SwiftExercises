@@ -63,6 +63,12 @@ class ViewController: UIViewController {
         // Cancellable task example
         //self.performCancellableTask()
         
+        // Repeating timer example
+        //self.performRepeatingTimerExample()
+        
+        // One shot timer example
+        //self.performOneShotTimerExample()
+        
         // Dispatch group example
         //self.performGroupOfTasks()
         
@@ -316,6 +322,46 @@ class ViewController: UIViewController {
         // Cancel task
         block.cancel()
         print("Task cancelled, the download won't finish.")
+        
+    }
+    
+    // Repeating timer example
+    //
+    // The following example creates a timer thet performs a block of code
+    // every 2 seconds until 4 times, after that the timer is cancelled
+    func performRepeatingTimerExample() {
+        var repetitions = 0
+        let queue = DispatchQueue.global(qos: .userInitiated)
+        let timer = DispatchSource.makeTimerSource(queue: queue)
+        timer.scheduleRepeating(deadline: .now(), interval: 2.0, leeway: .seconds(1))
+        timer.setEventHandler {
+            print("Repetition number \(repetitions)")
+            if repetitions > 3 {
+                timer.cancel()
+                print("Timer will be cancelled")
+            } else {
+                repetitions +=  1
+            }
+        }
+        timer.resume()
+        
+    }
+    
+    // One shot timer
+    //
+    // The following example creates a timer that performs a 
+    // block of code once.
+    func performOneShotTimerExample() {
+        let queue = DispatchQueue.global(qos: .userInitiated)
+        let timer = DispatchSource.makeTimerSource(queue: queue)
+        timer.scheduleOneshot(deadline: .now() + 2.0, leeway: .seconds(1))
+        timer.setEventHandler {
+            print("This message will be printed just once.")
+            print("Reference to timer \(timer)") // This log isn't necessary, 
+            //but I just put it here because iOS need to keep alive a reference
+            //to the timer in order to perform the block.
+        }
+        timer.resume()
         
     }
     
