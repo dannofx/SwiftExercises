@@ -1,14 +1,15 @@
 //
-//  ViewController.swift
+//  main.swift
 //  Generics
 //
-//  Created by Danno on 7/19/17.
-//  Copyright © 2017 Daniel Heredia. All rights reserved.
+//  Created by Danno on 2/27/18.
+//  Copyright © 2018 Daniel Heredia. All rights reserved.
 //
 
-import UIKit
+import Foundation
 
 // MARK: - Generic stack type
+
 struct Stack<Element> where Element: Equatable {
     var items = [Element]()
     
@@ -60,8 +61,8 @@ struct IntStack: Container {
             return items.removeLast()
         }
     }
-
-    // Protocol methods 
+    
+    // Protocol methods
     
     var count: Int {
         return self.items.count
@@ -81,7 +82,7 @@ struct IntStack: Container {
 
 struct ConstainerStack<Element: Equatable>: Container, Sequence {
     typealias Item = Element
-
+    
     var items = [Element]()
     
     mutating func push(_ item: Element) {
@@ -114,7 +115,7 @@ struct ConstainerStack<Element: Equatable>: Container, Sequence {
     func makeIterator() -> ContainerStackIterator<Element> {
         return ContainerStackIterator<Element>(self)
     }
-
+    
 }
 
 // MARK: - Iterator to use by ContainerStack
@@ -181,28 +182,28 @@ extension EquatableStack where Element == Double {
 
 // MARK: - Container with iterator
 
-// Available in Swift 4
+protocol IterableContainer: Container {
+    associatedtype Iterator: IteratorProtocol where Iterator.Element == Item
+    func makeIterator() -> Iterator
+}
 
-//protocol IterableContainer: Container {
-//    associatedtype Iterator: IteratorProtocol where Iterator.Element == Item
-//    func makeIterator() -> Iterator
-//}
-//
-//extension Container {
-//    subscript<Indices: Sequence>(indices: Indices) -> [Item]
-//    where Indices.Iterator.Element == Int {
-//        var result = [Item]()
-//        for index in indices {
-//            result.append(self[index])
-//        }
-//        return result
-//    }
-//}
+// MARK: - Access a range of elements
+
+extension Container {
+    subscript<Indices: Sequence>(indices: Indices) -> [Item]
+    where Indices.Iterator.Element == Int {
+        var result = [Item]()
+        for index in indices {
+            result.append(self[index])
+        }
+        return result
+    }
+}
 
 
 // MARK: - Generic function
 
-extension ViewController {
+extension GenericsExample {
     
     func swapTwoValues<T>(_ a: inout T, _ b: inout T) {
         let temp = a
@@ -213,7 +214,7 @@ extension ViewController {
 
 // MARK: - Generic function with constraints
 
-extension ViewController {
+extension GenericsExample {
     
     func findIndex<T: Equatable>(of value: T, in items: [T]) -> Int? {
         for (index, item) in items.enumerated() {
@@ -227,30 +228,29 @@ extension ViewController {
 
 // MARK: - Generic function with 'where' constraints
 
-extension ViewController {
+extension GenericsExample {
     
     func allItemsMatch<A: Container, B: Container>(_ container1: A, _ container2: B) -> Bool
-    where B.Item: Equatable, A.Item == B.Item {
-        
-        if container1.count != container2.count {
-            return false
-        }
-        
-        for i in 0..<container1.count {
-            if container1[i] != container2[i] {
+        where A.Item == B.Item {
+            
+            if container1.count != container2.count {
                 return false
             }
-        }
-        
-        return true
-        
+            
+            for i in 0..<container1.count {
+                if container1[i] != container2[i] {
+                    return false
+                }
+            }
+            
+            return true
+            
     }
 }
 
-class ViewController: UIViewController {
+class GenericsExample {
     
-    override func viewDidLoad() {
-        super.viewDidLoad()
+    func performExamples() {
         // Generic function usage example
         var aStr = "a"
         var bStr = "b"
@@ -292,6 +292,7 @@ class ViewController: UIViewController {
         let top = stackStr.topItem()
         print("Top item: \(top ?? "")")
         
+        
         // Generic function with constraints
         let found = self.findIndex(of: "g", in: stackStr.items)
         print("Found element: \(found ?? -1)")
@@ -308,8 +309,12 @@ class ViewController: UIViewController {
             print("\(str)")
         }
         
-        // Use a function with 'where' generic constraints
+        // Access a range of elements
+        let subElements = containerStack[0...2]
+        print("First 2 elements")
+        print(subElements)
         
+        // Use a function with 'where' generic constraints
         var containerIntStack = ConstainerStack<Int>()
         containerIntStack.append(1)
         containerIntStack.append(2)
@@ -330,14 +335,11 @@ class ViewController: UIViewController {
         equatableStack.push(6.0)
         equatableStack.push(3.0)
         print("Average equatableStack: \(equatableStack.average())")
-        
-        
     }
-    
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
-    
 }
+
+// MARK: - Test
+
+let example = GenericsExample()
+example.performExamples()
 

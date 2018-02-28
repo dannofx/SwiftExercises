@@ -9,7 +9,7 @@
 import UIKit
 
 // This property will be used in the example "Dispatch example"
-var firstAccessMessage: String = { _ in
+var firstAccessMessage: String = {
     print("This code will be executed just once.")
     let date = Date()
     let dateFormatter = DateFormatter()
@@ -333,7 +333,7 @@ class ViewController: UIViewController {
         var repetitions = 0
         let queue = DispatchQueue.global(qos: .userInitiated)
         let timer = DispatchSource.makeTimerSource(queue: queue)
-        timer.scheduleRepeating(deadline: .now(), interval: 2.0, leeway: .seconds(1))
+        timer.schedule(deadline: .now(), repeating: 2.0, leeway: .seconds(1))
         timer.setEventHandler {
             print("Repetition number \(repetitions)")
             if repetitions > 3 {
@@ -354,7 +354,7 @@ class ViewController: UIViewController {
     func performOneShotTimerExample() {
         let queue = DispatchQueue.global(qos: .userInitiated)
         let timer = DispatchSource.makeTimerSource(queue: queue)
-        timer.scheduleOneshot(deadline: .now() + 2.0, leeway: .seconds(1))
+        timer.schedule(deadline: .now() + 2.0, leeway: .seconds(1))
         timer.setEventHandler {
             print("This message will be printed just once.")
             print("Reference to timer \(timer)") // This log isn't necessary, 

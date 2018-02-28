@@ -73,7 +73,7 @@ extension SearchTableViewController: UISearchBarDelegate {
         self.view.endEditing(false)
     }
     
-    func endSearchTermEdition(sender: Any) {
+    @objc func endSearchTermEdition(sender: Any) {
         self.view.endEditing(true)
     }
 }
