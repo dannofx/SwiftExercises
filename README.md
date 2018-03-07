@@ -11,3 +11,4 @@ Currently, the majority of the exercises are updated to Swift 4, but since this 
 4. **[AutoresizingMasks](AutoresizingMasks/)**: Contains different examples of the use of the `autoresizingMask` property of an `UIView`.
 5. **[Generics](Generics/)**: Differents examples of the use of Generics in Swift 4.
 6. **[Strings](Strings/)**: A playground with different examples of the use of strings in Swift 4.
+7. **[MVVCAlarmExample](MVVCAlarmExample/)**: A simple project to show the usage and implementation of MVVM design pattern.

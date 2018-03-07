@@ -1,0 +1,383 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 48;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		515EF76E204FA3210057F3CF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 515EF76D204FA3210057F3CF /* AppDelegate.swift */; };
+		515EF773204FA3210057F3CF /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 515EF771204FA3210057F3CF /* Main.storyboard */; };
+		515EF775204FA3210057F3CF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 515EF774204FA3210057F3CF /* Assets.xcassets */; };
+		515EF778204FA3210057F3CF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 515EF776204FA3210057F3CF /* LaunchScreen.storyboard */; };
+		515EF780204FA3760057F3CF /* Alarm.swift in Sources */ = {isa = PBXBuildFile; fileRef = 515EF77F204FA3760057F3CF /* Alarm.swift */; };
+		515EF782204FA3DE0057F3CF /* AlarmViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 515EF781204FA3DE0057F3CF /* AlarmViewModel.swift */; };
+		515EF784204FA4350057F3CF /* ConfigurationTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 515EF783204FA4350057F3CF /* ConfigurationTableViewController.swift */; };
+		515EF786204FA6D60057F3CF /* InitialViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 515EF785204FA6D60057F3CF /* InitialViewController.swift */; };
+		515EF788204FA9710057F3CF /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 515EF787204FA9710057F3CF /* Constants.swift */; };
+		515EF78A204FAA3C0057F3CF /* SwitchableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 515EF789204FAA3C0057F3CF /* SwitchableCell.swift */; };
+		515EF78C204FB56F0057F3CF /* ValueCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 515EF78B204FB56F0057F3CF /* ValueCell.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		515EF76A204FA3210057F3CF /* MVVCAlarmExample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MVVCAlarmExample.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		515EF76D204FA3210057F3CF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		515EF772204FA3210057F3CF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		515EF774204FA3210057F3CF /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		515EF777204FA3210057F3CF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		515EF779204FA3210057F3CF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		515EF77F204FA3760057F3CF /* Alarm.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Alarm.swift; sourceTree = "<group>"; };
+		515EF781204FA3DE0057F3CF /* AlarmViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlarmViewModel.swift; sourceTree = "<group>"; };
+		515EF783204FA4350057F3CF /* ConfigurationTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfigurationTableViewController.swift; sourceTree = "<group>"; };
+		515EF785204FA6D60057F3CF /* InitialViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InitialViewController.swift; sourceTree = "<group>"; };
+		515EF787204FA9710057F3CF /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		515EF789204FAA3C0057F3CF /* SwitchableCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwitchableCell.swift; sourceTree = "<group>"; };
+		515EF78B204FB56F0057F3CF /* ValueCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ValueCell.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		515EF767204FA3210057F3CF /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		515EF761204FA3200057F3CF = {
+			isa = PBXGroup;
+			children = (
+				515EF76C204FA3210057F3CF /* MVVCAlarmExample */,
+				515EF76B204FA3210057F3CF /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		515EF76B204FA3210057F3CF /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				515EF76A204FA3210057F3CF /* MVVCAlarmExample.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		515EF76C204FA3210057F3CF /* MVVCAlarmExample */ = {
+			isa = PBXGroup;
+			children = (
+				515EF790204FCC640057F3CF /* ViewModels */,
+				515EF78F204FCC5A0057F3CF /* Models */,
+				515EF78E204FCC430057F3CF /* Controllers */,
+				515EF78D204FCC300057F3CF /* Cells */,
+				515EF76D204FA3210057F3CF /* AppDelegate.swift */,
+				515EF771204FA3210057F3CF /* Main.storyboard */,
+				515EF774204FA3210057F3CF /* Assets.xcassets */,
+				515EF776204FA3210057F3CF /* LaunchScreen.storyboard */,
+				515EF779204FA3210057F3CF /* Info.plist */,
+				515EF787204FA9710057F3CF /* Constants.swift */,
+			);
+			path = MVVCAlarmExample;
+			sourceTree = "<group>";
+		};
+		515EF78D204FCC300057F3CF /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				515EF789204FAA3C0057F3CF /* SwitchableCell.swift */,
+				515EF78B204FB56F0057F3CF /* ValueCell.swift */,
+			);
+			name = Cells;
+			sourceTree = "<group>";
+		};
+		515EF78E204FCC430057F3CF /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				515EF783204FA4350057F3CF /* ConfigurationTableViewController.swift */,
+				515EF785204FA6D60057F3CF /* InitialViewController.swift */,
+			);
+			name = Controllers;
+			sourceTree = "<group>";
+		};
+		515EF78F204FCC5A0057F3CF /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				515EF77F204FA3760057F3CF /* Alarm.swift */,
+			);
+			name = Models;
+			sourceTree = "<group>";
+		};
+		515EF790204FCC640057F3CF /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				515EF781204FA3DE0057F3CF /* AlarmViewModel.swift */,
+			);
+			name = ViewModels;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		515EF769204FA3210057F3CF /* MVVCAlarmExample */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 515EF77C204FA3210057F3CF /* Build configuration list for PBXNativeTarget "MVVCAlarmExample" */;
+			buildPhases = (
+				515EF766204FA3210057F3CF /* Sources */,
+				515EF767204FA3210057F3CF /* Frameworks */,
+				515EF768204FA3210057F3CF /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = MVVCAlarmExample;
+			productName = MVVCAlarmExample;
+			productReference = 515EF76A204FA3210057F3CF /* MVVCAlarmExample.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		515EF762204FA3200057F3CF /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0920;
+				LastUpgradeCheck = 0920;
+				ORGANIZATIONNAME = "Daniel Heredia";
+				TargetAttributes = {
+					515EF769204FA3210057F3CF = {
+						CreatedOnToolsVersion = 9.2;
+						ProvisioningStyle = Automatic;
+					};
+				};
+			};
+			buildConfigurationList = 515EF765204FA3200057F3CF /* Build configuration list for PBXProject "MVVCAlarmExample" */;
+			compatibilityVersion = "Xcode 8.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 515EF761204FA3200057F3CF;
+			productRefGroup = 515EF76B204FA3210057F3CF /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				515EF769204FA3210057F3CF /* MVVCAlarmExample */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		515EF768204FA3210057F3CF /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				515EF778204FA3210057F3CF /* LaunchScreen.storyboard in Resources */,
+				515EF775204FA3210057F3CF /* Assets.xcassets in Resources */,
+				515EF773204FA3210057F3CF /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		515EF766204FA3210057F3CF /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				515EF78C204FB56F0057F3CF /* ValueCell.swift in Sources */,
+				515EF786204FA6D60057F3CF /* InitialViewController.swift in Sources */,
+				515EF784204FA4350057F3CF /* ConfigurationTableViewController.swift in Sources */,
+				515EF782204FA3DE0057F3CF /* AlarmViewModel.swift in Sources */,
+				515EF76E204FA3210057F3CF /* AppDelegate.swift in Sources */,
+				515EF780204FA3760057F3CF /* Alarm.swift in Sources */,
+				515EF78A204FAA3C0057F3CF /* SwitchableCell.swift in Sources */,
+				515EF788204FA9710057F3CF /* Constants.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		515EF771204FA3210057F3CF /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				515EF772204FA3210057F3CF /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		515EF776204FA3210057F3CF /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				515EF777204FA3210057F3CF /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		515EF77A204FA3210057F3CF /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.2;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		515EF77B204FA3210057F3CF /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		515EF77D204FA3210057F3CF /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = FMC5MLL736;
+				INFOPLIST_FILE = MVVCAlarmExample/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = org.mistercyb.MVVCAlarmExample;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		515EF77E204FA3210057F3CF /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = FMC5MLL736;
+				INFOPLIST_FILE = MVVCAlarmExample/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = org.mistercyb.MVVCAlarmExample;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		515EF765204FA3200057F3CF /* Build configuration list for PBXProject "MVVCAlarmExample" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				515EF77A204FA3210057F3CF /* Debug */,
+				515EF77B204FA3210057F3CF /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		515EF77C204FA3210057F3CF /* Build configuration list for PBXNativeTarget "MVVCAlarmExample" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				515EF77D204FA3210057F3CF /* Debug */,
+				515EF77E204FA3210057F3CF /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 515EF762204FA3200057F3CF /* Project object */;
+}
