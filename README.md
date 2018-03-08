@@ -12,3 +12,4 @@ Currently, the majority of the exercises are updated to Swift 4, but since this 
 5. **[Generics](Generics/)**: Differents examples of the use of Generics in Swift 4.
 6. **[Strings](Strings/)**: A playground with different examples of the use of strings in Swift 4.
 7. **[MVVCAlarmExample](MVVCAlarmExample/)**: A simple project to show the usage and implementation of MVVM design pattern.
+8. **[InternalConstantsNamespace](InternalConstantsNamespace/)**: Alternatives to work with constants in a project.
